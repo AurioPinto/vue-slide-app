@@ -21,7 +21,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "./style.css";
 export default {
   components: {
@@ -34,19 +34,19 @@ export default {
         src: "Meet1.jpg",
         alt: "Slide 1",
         heading: "Nota de imprensa- Dia de Africa",
-        description: "Nota de imprensa- Dia de Africa",
+        description: "Nota de imprensa- Dia de Africa 14.02.2024",
       },
       {
         src: "meet02.jpg",
         alt: "Slide 2",
         heading: "Nota de imprensa- Dia de Africa",
-        description: "Nota de imprensa- Dia de Africa",
+        description: "Nota de imprensa- Dia de Africa 14.02.2024",
       },
       {
         src: "meet03.jpg",
         alt: "Slide 3",
         heading: "Nota de imprensa- Dia de Africa",
-        description: "Nota de imprensa- Dia de Africa",
+        description: "Nota de imprensa- Dia de Africa 14.02.2024",
       },
     ];
 
@@ -57,9 +57,23 @@ export default {
           return '<span class="' + className + '">' + (index + 1) + "</span>";
         },
       },
-      modules: [Pagination],
+      modules: [Pagination, Navigation, Autoplay],
       images,
     };
   },
 };
 </script>
+<style>
+.mySwiper {
+  background-image: url("water.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-pagination-bullet {
+  opacity: 0.7;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  margin-left: 50px;
+}
+</style>
